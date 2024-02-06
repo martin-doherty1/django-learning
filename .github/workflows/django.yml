@@ -33,11 +33,6 @@ jobs:
           ELASTIC_PASSWORD: test1231
         ports:
           - 9200:9200
-        options: >-
-          --health-cmd="docker cp es01:/usr/share/elasticsearch/config/certs/http_ca.crt . && curl --cacert http_ca.crt -u elastic:$ELASTIC_PASSWORD https://localhost:9200"
-          --health-interval 10s 
-          --health-timeout 10s 
-          --health-retries 10
 
     strategy:
       max-parallel: 4
