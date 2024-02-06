@@ -139,7 +139,7 @@ REST_FRAMEWORK = {
 ELASTICSEARCH_DSL = {
     "default": {
         "hosts": "https://localhost:9200",
-        "http_auth": ("elastic", os.environ.get("ELASTIC_PASSWORD", "")),
+        "http_auth": ("elastic", os.environ.get("ELASTIC_PASSWORD", "test1231")),
         "ca_certs": "http_ca.crt",
     }
 }
