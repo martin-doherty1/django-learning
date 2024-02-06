@@ -59,4 +59,5 @@ jobs:
     - name: Run Tests
       run: | 
         docker cp elasticcontainer:/usr/share/elasticsearch/config/certs/http_ca.crt .
+        ls
         python manage.py test
