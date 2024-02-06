@@ -27,7 +27,7 @@ jobs:
           --health-retries 5
 
       elasticsearch_main:
-        image: docker.elastic.co/elasticsearch/elasticsearch:latest
+        image: docker.elastic.co/elasticsearch/elasticsearch:8.12.0
         env:
           discovery.type: single-node
           ELASTIC_PASSWORD: test1231
