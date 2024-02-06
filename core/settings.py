@@ -84,7 +84,7 @@ DATABASES = {
         'NAME': 'djangotest',
         "USER": os.environ.get('POSTGRES_USERNAME', 'postgres'),
         "PASSWORD": os.environ.get('POSTGRES_PASSWORD', ''),
-        "HOST": os.environ.get('POSTGRES_HOST', 'localhost'),
+        "HOST": os.environ.get('POSTGRES_HOST', 'postgres'),
         "port": 5432
     }
 }
