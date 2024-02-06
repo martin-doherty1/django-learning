@@ -5,6 +5,9 @@ import sys
 
 
 def main():
+    print(os.environ.get('POSTGRES_USERNAME'))
+    print(os.environ.get('POSTGRES_PASSWORD'))
+    print(os.environ.get('POSTGRES_HOST'))
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'core.settings')
     try:
