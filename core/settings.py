@@ -136,10 +136,10 @@ REST_FRAMEWORK = {
     "PAGE_SIZE": 25
 }
 
-ELASTICSEARCH_DSL = {
-    "default": {
-        "hosts": "https://localhost:9200",
-        "http_auth": ("elastic", os.environ.get("ELASTIC_PASSWORD", "test1231")),
-        "ca_certs": "http_ca.crt",
-    }
-}
+# ELASTICSEARCH_DSL = {
+#     "default": {
+#         "hosts": "https://localhost:9200",
+#         "http_auth": ("elastic", os.environ.get("ELASTIC_PASSWORD", "test1231")),
+#         "ca_certs": "http_ca.crt",
+#     }
+# }
