@@ -30,7 +30,6 @@ test:
 Migrate:
 	$(PYTHON) manage.py makemigrations
 	$(PYTHON) manage.py migrate
-	yes | $(PYTHON) manage.py search_index --rebuild
 
 run: Migrate
 	$(PYTHON) manage.py runserver
@@ -38,3 +37,4 @@ run: Migrate
 testData: Migrate
 	$(PYTHON) manage.py populate_db
 	$(PYTHON) manage.py populate_exercises
+	yes | $(PYTHON) manage.py search_index --rebuild
