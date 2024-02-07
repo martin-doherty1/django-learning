@@ -19,14 +19,22 @@ create-dev-env:	requirements.txt
 clean:
 	rm -rf __pycache__
 	rm -rf $(VENV)
-	(docker ps -a | grep 'postgresCont' && docker rm -f postgresCont) > /dev/null 2>&1 || echo "postgresCont does not exist"
-	(docker ps -a | grep 'elasticcontainer' && docker rm -f elasticcontainer) > /dev/null 2>&1 || echo "elasticcontainer does not exist"
-
-run:
-	$(PYTHON) manage.py makemigrations
-	$(PYTHON) manage.py migrate
-	yes | $(PYTHON) manage.py search_index --rebuild
-	$(PYTHON) manage.py runserver
+	(docker ps -a | grep 'postgresCont' && docker rm -f postgresCont) > /dev/null 2>&1 || echo "postgres container does not exist"
+	(docker ps -a | grep 'elasticcontainer' && docker rm -f elasticcontainer) > /dev/null 2>&1 || echo "elastic container does not exist"
+	(docker network list | grep "elastic" && docker network rm elastic) > /dev/null 2>&1 || echo "elastic docker network does not exist"
 
 test:
 	$(PYTHON) manage.py test
+
+.PHONY: Migrate
+Migrate:
+	$(PYTHON) manage.py makemigrations
+	$(PYTHON) manage.py migrate
+	yes | $(PYTHON) manage.py search_index --rebuild
+
+run: Migrate
+	$(PYTHON) manage.py runserver
+
+testData: Migrate
+	$(PYTHON) manage.py populate_db
+	$(PYTHON) manage.py populate_exercises
