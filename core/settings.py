@@ -83,8 +83,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'djangotest',
         "USER": os.environ.get('POSTGRES_USERNAME', 'postgres'),
-        "PASSWORD": os.environ.get('POSTGRES_PASSWORD', ''),
-        "HOST": os.environ.get('POSTGRES_HOST', 'postgres'),
+        "PASSWORD": os.environ.get('POSTGRES_PASSWORD', 'pass123'),
+        "HOST": os.environ.get('POSTGRES_HOST', 'localhost'),
         "port": 5432
     }
 }
@@ -139,7 +139,7 @@ REST_FRAMEWORK = {
 ELASTICSEARCH_DSL = {
     "default": {
         "hosts": "https://localhost:9200",
-        "http_auth": ("elastic", os.environ.get("ELASTIC_PASSWORD", "test1231")),
+        "http_auth": ("elastic", os.environ.get("ELASTIC_PASSWORD", "localDev!123")),
         "ca_certs": "http_ca.crt",
     }
 }
