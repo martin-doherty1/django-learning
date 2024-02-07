@@ -1,7 +1,7 @@
 ## Django Elastic Learning
 
 # To create postgres docker container
-``docker run -d --name postgresDB -p 5432:5432 -e POSTGRES_PASSWORD=pass123 postgres``
+``docker run -d --name postgresCont -p 5432:5432 -e POSTGRES_PASSWORD=pass123 postgres``
 
 ### [To create local instance of elastic search](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html)
 

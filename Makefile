@@ -19,8 +19,8 @@ create-dev-env:	requirements.txt
 clean:
 	rm -rf __pycache__
 	rm -rf $(VENV)
-	docker rm -f postgresCont
-	docker rm -f elasticcontainer
+	(docker ps -a | grep 'postgresCont' && docker rm -f postgresCont) > /dev/null 2>&1 || echo "postgresCont does not exist"
+	(docker ps -a | grep 'elasticcontainer' && docker rm -f elasticcontainer) > /dev/null 2>&1 || echo "elasticcontainer does not exist"
 
 run:
 	$(PYTHON) manage.py makemigrations
