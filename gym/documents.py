@@ -7,6 +7,7 @@ from gym.models import Exercise, Sets
 @registry.register_document
 class ExerciseDocument(Document):
     id = fields.IntegerField()
+    type = fields.KeywordField(attr="type_to_string")
 
     class Index:
         name = 'exercises'
@@ -16,7 +17,7 @@ class ExerciseDocument(Document):
 
     class Django:
         model = Exercise
-        fields = ['exercise_name', 'body_part']
+        fields = ['exercise_name', 'body_part', 'description']
 
 
 @registry.register_document

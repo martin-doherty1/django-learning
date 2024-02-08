@@ -2,7 +2,6 @@ name: Django CI
 
 on:
   push:
-    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
@@ -59,4 +58,5 @@ jobs:
     - name: Run Tests
       run: | 
         docker cp elasticcontainer:/usr/share/elasticsearch/config/certs/http_ca.crt .
+        sleep 30
         python manage.py test
