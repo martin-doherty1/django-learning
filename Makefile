@@ -8,7 +8,7 @@ create-dev-env:	requirements.txt
 	docker start postgresCont  > /dev/null 2>&1 || docker run -d --name postgresCont -p 5432:5432 -e POSTGRES_PASSWORD=pass123 -e POSTGRES_DB=djangotest postgres
 	docker network inspect elastic > /dev/null 2>&1 || docker network create elastic
 	docker pull docker.elastic.co/elasticsearch/elasticsearch:8.12.0
-	docker start elasticcontainer > /dev/null 2>&1 || docker run -d --net elastic -p 9200:9200 --name elasticcontainer -e "ELASTIC_PASSWORD=localDev!123" docker.elastic.co/elasticsearch/elasticsearch:8.12.0
+	docker start elasticcontainer > /dev/null 2>&1 || docker run -d --net elastic -p 9200:9200 --name elasticcontainer -e "ELASTIC_PASSWORD=test1231" docker.elastic.co/elasticsearch/elasticsearch:8.12.0
 	sleep 30
 	docker cp elasticcontainer:/usr/share/elasticsearch/config/certs/http_ca.crt .
 	brew install postgresql@14
