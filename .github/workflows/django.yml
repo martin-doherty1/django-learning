@@ -59,4 +59,7 @@ jobs:
       run: | 
         docker cp elasticcontainer:/usr/share/elasticsearch/config/certs/http_ca.crt .
         sleep 30
+        python manage.py makemigrations
+        python manage.py migrate
+        yes | python manage.py search_index --rebuild
         python manage.py test

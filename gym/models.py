@@ -1,14 +1,12 @@
 from django.db import models
 
-
-# Create your models here.
-
 EXERCISE_TYPE = [
     ("BB", "Barbell"),
     ("CAB", "Cable"),
     ("DB", "Dumbbell"),
     ("BW", "Body Weight")
 ]
+
 
 class Exercise(models.Model):
     exercise_name = models.TextField(max_length=50, null=False, blank=False)

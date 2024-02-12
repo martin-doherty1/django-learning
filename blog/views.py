@@ -1,9 +1,5 @@
-from django.shortcuts import render
-
-# Create your views here.
 from django.contrib.auth.models import User
 from rest_framework import viewsets
-
 from blog.models import Category, Article
 from blog.serializers import CategorySerializer, ArticleSerializer, UserSerializer
 

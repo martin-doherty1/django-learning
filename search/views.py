@@ -13,6 +13,7 @@ from blog.serializers import ArticleSerializer, UserSerializer, CategorySerializ
 from gym.serializers import ExerciseSerializer, AggregationSerializer
 from gym.documents import ExerciseDocument
 
+
 class PaginatedElasticSearchAggAPIView(APIView, LimitOffsetPagination):
     serializer_class = None
     document_class = None

@@ -1,6 +1,5 @@
 from django.test import TestCase
 from rest_framework.reverse import reverse
-
 from blog.models import Category
 
 
@@ -8,8 +7,9 @@ from blog.models import Category
 def create_category(category_name, category_description):
     return Category.objects.create(name=category_name, description=category_description)
 
+
 class ArticleTests(TestCase):
-    def test_no_Articles(self):
+    def test_no_articles(self):
         """
         If no questions exist, an appropriate message is displayed.
         """
@@ -33,4 +33,3 @@ class CategoryTests(TestCase):
         response = self.client.post(reverse("category-list"), data)
         self.assertEqual(Category.objects.last().name, data["name"])
         self.assertEqual(response.status_code, 201)
-
