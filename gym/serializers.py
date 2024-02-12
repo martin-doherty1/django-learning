@@ -1,5 +1,4 @@
 from rest_framework import serializers
-
 from gym.models import Exercise, Sets
 
 
@@ -20,4 +19,3 @@ class SetsSerializer(serializers.ModelSerializer):
 class AggregationSerializer(serializers.Serializer):
     key = serializers.CharField()
     doc_count = serializers.IntegerField()
-

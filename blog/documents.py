@@ -8,8 +8,8 @@ from blog.models import Category, Article
 class UserDocument(Document):
     class Index:
         name = 'users'
-        settings = {'number_of_shards':1,
-                    'number_of_replicas':0
+        settings = {'number_of_shards': 1,
+                    'number_of_replicas': 0
                     }
 
     class Django:
@@ -34,6 +34,7 @@ class CategoryDocument(Document):
             "name",
             "description",
         ]
+
 
 @registry.register_document
 class ArticleDocument(Document):
