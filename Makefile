@@ -24,7 +24,7 @@ clean:
 	(docker network list | grep "elastic" && docker network rm elastic) > /dev/null 2>&1 || echo "elastic docker network does not exist or another container is using the network"
 
 test:
-	$(PYTHON) manage.py test
+	pytest --cov=. --cov-report html --cov-config=.coveragerc
 
 .PHONY: Migrate
 Migrate:

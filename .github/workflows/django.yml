@@ -62,4 +62,9 @@ jobs:
         python manage.py makemigrations
         python manage.py migrate
         yes | python manage.py search_index --rebuild
-        python manage.py test
+        pytest --cov=. --cov-config=.coveragerc
+    - name: Upload coverage reports to Codecov
+      uses: codecov/codecov-action@v4.0.1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        slug: martin-doherty1/django-learning

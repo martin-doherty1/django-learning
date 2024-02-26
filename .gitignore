@@ -6,3 +6,6 @@ http_ca.crt
 .mypy_cache
 __pycache__/
 .DS_Store
+htmlcov/
+.coverage
+.pytest_cache/
