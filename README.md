@@ -1,3 +1,5 @@
+[![codecov](https://codecov.io/gh/martin-doherty1/django-learning/graph/badge.svg?token=7FBNUZBLFF)](https://codecov.io/gh/martin-doherty1/django-learning)
+
 ## Django Elastic Learning
 
 # To create postgres docker container

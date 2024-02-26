@@ -1,6 +1,8 @@
 asgiref==3.7.2
 certifi==2024.2.2
-Django==5.0.1
+coverage==7.4.3
+Django==5.0.2
+django-cors-headers==4.3.1
 django-elasticsearch-dsl==8.0
 djangorestframework==3.14.0
 elastic-transport==8.12.0
@@ -8,6 +10,9 @@ elasticsearch==8.12.0
 elasticsearch-dsl==8.12.0
 psycopg==3.1.17
 psycopg2==2.9.9
+pytest==8.0.2
+pytest-cov==4.1.0
+pytest-django==4.8.0
 python-dateutil==2.8.2
 pytz==2024.1
 six==1.16.0
