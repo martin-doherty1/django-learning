@@ -18,11 +18,11 @@ class Command(BaseCommand):
         exercise1.save()
 
         exercise2 = Exercise.objects.create(exercise_name="squat", body_part="legs",
-                                            description="stronger leg muscles", type="CAB")
+                                            description="stronger leg muscles", type="BB")
         exercise2.save()
 
         exercise3 = Exercise.objects.create(exercise_name="squat3", body_part="legs",
-                                            description="stronger leg muscles", type="CAB")
+                                            description="stronger leg muscles", type="BB")
         exercise3.save()
 
         # create Sets
