@@ -25,6 +25,7 @@ clean:
 
 test:
 	pytest --cov=. --cov-report html --cov-config=.coveragerc
+	yes | $(PYTHON) manage.py search_index --rebuild
 
 .PHONY: Migrate
 Migrate:

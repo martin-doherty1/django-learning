@@ -32,7 +32,6 @@ class PaginatedElasticSearchAggAPIView(APIView, LimitOffsetPagination):
 
             agg_results = []
             for bucket in response.aggregations.type_term.buckets:
-                print(f"Type: {bucket.key}, Count: {bucket.doc_count}")
                 result = {
                     "key": bucket.key,
                     "doc_count": bucket.doc_count
@@ -61,11 +60,10 @@ class PaginatedElasticSearchQueryAPIView(APIView, LimitOffsetPagination):
             search = self.document_class.search().query(q)
             response = search.execute()
 
-            print(f"Found {response.hits.total.value} hit(s) for query: '{query}'")
-
             results = self.paginate_queryset(response, request, view=self)
             serializer = self.serializer_class(results, many=True)
-            return self.get_paginated_response(serializer.data)
+            http_response = self.get_paginated_response(serializer.data)
+            return http_response
         except Exception as e:
             return HttpResponse(e, status=500)
 

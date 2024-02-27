@@ -1,7 +1,6 @@
 from django.test import TestCase
 from rest_framework.reverse import reverse
 
-from blog.models import Category
 from blog.tests import create_category
 from gym.tests import create_exercise
 
